@@ -1,6 +1,11 @@
 .rootContainer {
-    width: min(900px, 95%);
+    width: min(800px, 95%);
     margin: 0px auto;
+}
+
+.rootContainer > section > h1 {
+    font-size: 25px;
+    padding: 20px 0px;
 }
 
 .main {
@@ -8,7 +13,6 @@
 }
 
 .main .intro p {
-    text-align: justify;
     font-size: 15px;
 }
 
@@ -28,14 +32,15 @@
     padding: 0px;
 }
 
-
+.work, .project, .education {
+    padding: 0px 0px 25px 0px;
+}
 
 .education {
     display: grid;
     justify-content: start;
     grid-template-columns: 82px auto;
     gap: 0px 20px;
-    padding: 20px 0px;
 }
 
 .education img {
@@ -60,11 +65,29 @@
 .work {
     display: flex;
     flex-direction: column;
-    padding: 20px 0px;
 }
 
-.work > * {
+.work > *, .project > *, .education > *  {
     margin: 0px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 0px 20px;
+}
+
+.project > img {
+    width: 140px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+.copyright {
+    padding: 20px 0px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -81,5 +104,27 @@
         display: flex;
         flex-wrap: wrap-reverse;
         align-self: center;
+    }
+}
+
+.tag {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.tag:hover {
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .project, .education {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .project > img, .education > img {
+        display: none;
     }
 }
