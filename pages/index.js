@@ -269,7 +269,7 @@ export default function Home() {
       <Head>
         <title>{information.title}</title>
         <meta name="description" content={information.metadata.description} />
-        <link rel="icon" href={information.metadata.icon} />
+        <link rel="icon" href={imgRoot + information.metadata.icon} />
       </Head>
 
       <main>
