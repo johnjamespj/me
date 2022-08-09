@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import style from "../styles/Home.module.css"
 
+const imgRoot = "https://johnjamespj.s3.amazonaws.com/imgs/"
+
 const information = {
   name: `John James`,
-  profileImage: `/profile.jpg`,
+  profileImage: "profile.jpg",
 
   email: `jjames23@gmu.edu`,
   phone: "+1 (703) 705-1875",
@@ -11,7 +13,7 @@ const information = {
 
   title: `John James`,
   metadata: {
-    icon: `/favicon.ico`,
+    icon: `favicon.ico`,
     description: `Website description`,
   },
 
@@ -37,7 +39,7 @@ const information = {
 
   education: [
     {
-      img: "/gmu.svg",
+      img: "gmu.svg",
       institutionName: "George Mason University",
       educationClass: {
         type: "undergrad",
@@ -50,7 +52,7 @@ const information = {
       gpa: 3.85,
     },
     {
-      img: "/hhs.jpg",
+      img: "hhs.jpg",
       institutionName: "Herndon High School",
       educationClass: {
         type: "highschool",
@@ -61,7 +63,7 @@ const information = {
       gpa: 3.9,
     },
     {
-      img: "/jnv.png",
+      img: "jnv.png",
       institutionName: "Jawahar Navodaya Vidyala, Nerimangalam",
       educationClass: {
         type: "highschool",
@@ -140,7 +142,7 @@ const information = {
         playStore: "https://play.google.com/store/apps/details?id=br.com.barros.kepler",
       },
       tags: ["Dart", "Flutter", "REST"],
-      preview: "/kepler.jpg"
+      preview: "kepler.jpg"
     },
     {
       title: "FaceIndex: Public Figure Face Index",
@@ -153,7 +155,7 @@ const information = {
         code: "https://github.com/johnjamespj/vigilant-goggles"
       },
       tags: ["Python", "Tensorflow", "Spark", "EC2"],
-      preview: "/face-index.jpg"
+      preview: "face-index.jpg"
     },
     {
       title: "2022 CAHMP Entrepreneurship Challenge",
@@ -166,7 +168,7 @@ const information = {
         website: "https://cahmp.gmu.edu/",
       },
       tags: ["Figma"],
-      preview: "/cahmp.png"
+      preview: "cahmp.png"
     },
     {
       title: "JSON Parser written in C",
@@ -179,7 +181,7 @@ const information = {
         code: "https://github.com/johnjamespj/json_parser"
       },
       tags: ["C", "JSON"],
-      preview: "/json.png"
+      preview: "json.png"
     },
     {
       title: "Minesweeper game on React",
@@ -193,7 +195,7 @@ const information = {
         game: "https://johnjamespj.github.io/minesweeper/",
       },
       tags: ["js", "HTML", "CSS", "React"],
-      preview: "/minesweeper.png"
+      preview: "minesweeper.png"
     },
     {
       title: "Secrets: Encrypted Anonymous Text Message Repository",
@@ -206,7 +208,7 @@ const information = {
         code: "https://github.com/johnjamespj/secrets",
       },
       tags: ["js", "HTML", "CSS", "React", "AWS", "AWS DynamoDB", "AWS Amplify"],
-      preview: "/secrets.jpg"
+      preview: "secrets.jpg"
     },
   ]
 }
@@ -222,7 +224,7 @@ function capitalizeFirstLetter(string) {
 
 function EducationRow({ educationInfo }) {
   return <li className={style.education}>
-    <img src={educationInfo.img} />
+    <img src={imgRoot + educationInfo.img} />
     <h2>{educationInfo.institutionName}</h2>
     {educationInfo.educationClass.degreeType && (<h3>{educationInfo.educationClass.degreeType} in {educationInfo.educationClass.major}</h3>)}
     <i> {formatDateToMonthYYYY(educationInfo.startDate)} &nbsp;-&nbsp;
@@ -246,7 +248,7 @@ function WorkExperianceRow({ workExperiance }) {
 function ProjectRow({ project }) {
   return (
     <li className={style.project}>
-      <img src={project.preview} />
+      <img src={imgRoot + project.preview} />
       <h2>{project.title}</h2>
       <i>{Object.keys(project.link).map((v, i) => (
         <a key={i} href={project.link[v]} target="_blank">
@@ -279,7 +281,7 @@ export default function Home() {
             <p>Feel free to contact me at <a href={`mailto:${information.email}`}>{information.email}</a>.</p>
           </div>
           <div className={style.profilePic}>
-            <img src={information.profileImage} />
+            <img src={imgRoot + information.profileImage} />
           </div>
         </div>
       </main>
