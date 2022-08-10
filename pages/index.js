@@ -7,7 +7,7 @@ const information = {
   name: `John James`,
   profileImage: "profile.jpg",
 
-  email: `jjames23@gmu.edu`,
+  email: `me@johnspage.dev`,
   phone: "+1 (703) 705-1875",
   address: "1493 Powells Tavern Pl, Herndon, VA 20170",
 
